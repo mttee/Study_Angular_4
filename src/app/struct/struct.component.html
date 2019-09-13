@@ -1,0 +1,10 @@
+<p *ngIf="isShow">struct works!</p>
+
+<button (click) = "isShow = !isShow">Toggle</button>
+
+//Dùng ngFor Để lập ra các phần tử trong mảng 
+<ul>
+    <li *ngFor="let sb of arrSubjects">
+        <p>{{"Học: " + sb}}</p>
+    </li>
+</ul>

@@ -1,0 +1,23 @@
+<p *ngIf = "!hideForm">Tiếng Việt</p>
+<input [(ngModel)] = "vn" *ngIf = "!hideForm"/> 
+<p *ngIf = "!hideForm">Tiếng Anh</p>
+<input [(ngModel)] = "en" *ngIf = "!hideForm"/>
+<button (click) = "addObject()" *ngIf = "!hideForm">Thêm</button>
+<button (click) = "hideForm = !hideForm" *ngIf = "hideForm">Thêm</button>
+
+<p>Lọc kết quả</p>
+<select [(ngModel)] = 'select'>
+    <option value="all" selected>Tất cả</option>
+    <option value="true">Đã nhớ</option>
+    <option value="false">Chưa nhớ</option>
+  </select>
+<div *ngFor="let word of arrWords">
+    <div  *ngIf="select === 'all' || (select === 'true' && word.memorized) || select === 'false' && !word.memorized">
+        <h4 [ngStyle] = "{color: word.memorized ? 'green': 'red'}">{{word.en}}</h4>
+        <p>{{word.vn}}</p>
+        <button (click) = "removeObject(word.id)">Remove</button>
+        <button (click) = "word.memorized = !word.memorized">
+            {{word.memorized ? 'Chưa thuộc' : 'Đã thuộc'}}
+        </button>
+    </div>
+</div>

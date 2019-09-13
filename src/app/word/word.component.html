@@ -1,0 +1,56 @@
+<h3>{{en}}, Tạo Component đầu tiên của Minh Tri</h3>
+<h3>{{vn}}, Tạo Component đầu tiên của Minh Trí</h3>
+
+<!-- Viết trực tiếp -->
+<!-- <button type="button" class="btn btn-primary" (click) = "forgot = !forgot">Toggle Forgot</button> -->
+
+
+<button type="button" class="btn btn-primary" (click) = "toggleForgot()">Toggle Forgot</button>
+
+
+<!-- Interpolation -->
+<img [hidden] = "forgot" src="{{imageUrl}}">
+
+<!-- Expression context -->
+<img [src]="imageUrl">  
+
+<!-- Dùng với keyup text -->
+<!-- <input type="text" class="form-control" aria-label="Small" (keyup) = "showName($event)"> -->
+
+<!-- Dùng với ngModel -->
+<!-- <input type="text" class="form-control" aria-label="Small" [(ngModel)] = "name" #txtUsername> -->
+
+<!-- <h3>{{name}}</h3> -->
+
+
+<input type="text" class="form-control" aria-label="Small" [(ngModel)] = "name" #txtUsername>
+
+
+<h3 [style.color]="isHighlight ? 'red':'black'">{{name}}</h3>
+
+<!-- Dùng ngStyle vì nếu có nhiều style mà viết chồng lên như thế là không ổn lắm -->
+<h3 [ngStyle] ="name.length % 2 === 0 ? evenStyle : oddStyle">{{name}}</h3>
+
+
+<!-- Style binding -->
+
+
+
+
+<!-- Class binding -->
+<div [class]="isHighlight ? 'circle' : 'square'"></div>
+
+<div [class.circle]="isHighlight" [class.square]="!isHighlight"></div>
+
+<!-- Dùng ngClass -->
+<div [ngClass]= "currentClass"></div>
+
+
+
+
+<!-- <h3>Tạo Component đầu tiên</h3>
+<h3>Tạo Component đầu tiên</h3>
+<h3>Tạo Component đầu tiên</h3>
+<h3>Tạo Component đầu tiên</h3>
+<h3>Tạo Component đầu tiên</h3>
+<h3>Tạo Component đầu tiên</h3> -->
